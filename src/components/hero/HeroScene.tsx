@@ -20,7 +20,17 @@ export function HeroScene() {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mediaQuery.matches);
+    const mobileQuery = window.matchMedia("(max-width: 768px)");
+    const updateMotion = () => {
+      setReducedMotion(mediaQuery.matches || mobileQuery.matches);
+    };
+    updateMotion();
+    mediaQuery.addEventListener("change", updateMotion);
+    mobileQuery.addEventListener("change", updateMotion);
+    return () => {
+      mediaQuery.removeEventListener("change", updateMotion);
+      mobileQuery.removeEventListener("change", updateMotion);
+    };
   }, []);
 
   // Intro character animation variants for "Sneha"
@@ -40,7 +50,7 @@ export function HeroScene() {
           initial={{ opacity: 0, scale: 0.96, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full rounded-[2rem] p-6 sm:p-8 lg:p-12 backdrop-blur-xl border shadow-[0_20px_60px_-15px_rgba(30,27,46,0.05)]"
+          className="relative w-full rounded-[2rem] p-4 sm:p-8 lg:p-12 backdrop-blur-xl border shadow-[0_20px_60px_-15px_rgba(30,27,46,0.05)]"
           style={{
             background: "var(--surface)",
             borderColor: "var(--border)",
@@ -75,7 +85,7 @@ export function HeroScene() {
               <h1
                 className="font-display font-extrabold flex tracking-[-0.02em] leading-[0.95]"
                 style={{
-                  fontSize: "clamp(3.5rem, 8vw, 7.5rem)",
+                  fontSize: "clamp(2.5rem, 8vw, 7.5rem)",
                   lineHeight: 0.95,
                   letterSpacing: "-0.02em",
                   color: "var(--text)",
@@ -257,7 +267,7 @@ export function HeroScene() {
             {/* ---------------------------------------------------------- */}
             <div className="relative w-full max-w-[600px] lg:justify-self-end flex flex-col items-center lg:items-end gap-3 lg:gap-4">
               {/* Card 1: "Currently building" (top-right corner of right col, max-width 280px) */}
-              <div className="order-2 lg:order-1 w-full max-w-[280px] self-center lg:self-end z-20 lg:-mb-6 xl:-mb-8">
+              <div className="order-2 lg:order-1 w-full max-w-[min(280px,90vw)] self-center lg:self-end z-20 lg:-mb-6 xl:-mb-8">
                 <GlassCard glowColor="rgba(255, 233, 183, 0.4)">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
@@ -308,7 +318,7 @@ export function HeroScene() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="order-1 lg:order-2 relative w-full max-w-[420px] sm:max-w-[460px] lg:max-w-[540px] flex flex-col items-center justify-center self-center lg:self-end pointer-events-none"
+                className="order-1 lg:order-2 relative w-full max-w-[min(420px,90vw)] sm:max-w-[460px] lg:max-w-[540px] flex flex-col items-center justify-center self-center lg:self-end pointer-events-none"
               >
                 {/* Image wrapper with radial mask to eliminate rectangular background */}
                 <div
@@ -403,7 +413,7 @@ export function HeroScene() {
               </motion.div>
 
               {/* Card 2: "Core Tech Stack" (bottom-right corner of right col, max-width 300px, does not cover platform) */}
-              <div className="order-3 lg:order-3 w-full max-w-[300px] self-center lg:self-end z-20 lg:-mt-6 xl:-mt-8">
+              <div className="order-3 lg:order-3 w-full max-w-[min(300px,90vw)] self-center lg:self-end z-20 lg:-mt-6 xl:-mt-8">
                 <GlassCard glowColor="rgba(255, 216, 229, 0.4)">
                   <div className="flex items-center justify-between mb-1 border-b pb-2" style={{ borderColor: "var(--border)" }}>
                     <span className="font-sans font-semibold text-xs tracking-normal" style={{ color: "var(--text)" }}>

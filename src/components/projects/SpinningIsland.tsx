@@ -11,7 +11,7 @@ interface SpinningIslandProps {
 
 export const SpinningIsland: React.FC<SpinningIslandProps> = ({ projects }) => {
   return (
-    <Suspense fallback={<div className="w-[min(640px,88vw)] aspect-square mx-auto rounded-3xl bg-[#BFD9EA]/20 animate-pulse" />}>
+    <Suspense fallback={<div className="w-[min(640px,92vw)] aspect-square mx-auto rounded-3xl bg-[#BFD9EA]/20 animate-pulse" />}>
       <FloatingIslandInner projects={projects} />
     </Suspense>
   );
@@ -169,7 +169,7 @@ const FloatingIslandInner: React.FC<SpinningIslandProps> = ({ projects }) => {
         ref={stageRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="relative w-[min(640px,88vw)] max-h-[62vh] aspect-square flex items-center justify-center overflow-visible island-entrance"
+        className="relative w-[min(640px,92vw)] max-h-[62vh] aspect-square flex items-center justify-center overflow-visible island-entrance"
       >
         {/* Floating Twinkling Stars in Background */}
         {!prefersReducedMotion &&

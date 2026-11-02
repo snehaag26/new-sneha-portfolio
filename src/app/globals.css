@@ -80,54 +80,55 @@
 
 [data-theme="dark"],
 .dark {
-  --bg: #0F0D1A;
-  --surface: #1A1730;
-  --surface-2: #231F3D;
+  --bg: #14121C;
+  --surface: #1E1B2A;
+  --surface-2: #272336;
+  --card: #1E1B2A;
+  --card-bg: #1E1B2A;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.08);
   --text: #F5F1FA;
-  --text-muted: #B3AECB;
-  --border: rgba(255, 255, 255, 0.12);
-  --accent: #FF8FB1;
-  --accent-contrast: #1E1B2E;
-  --pill-active-bg: #FFE9A8;
-  --pill-active-text: #1E1B2E;
+  --text-muted: #A9A3B8;
+  --accent: #FF8FB8;
+  --accent-contrast: #14121C;
+  --pill-active-bg: #FFE9B7;
+  --pill-active-text: #14121C;
 
   /* Card and UI tokens */
-  --card-bg: var(--surface);
-  --card-border: var(--border);
   --lt-card-bg: var(--surface);
   --lt-card-border: var(--border);
-  --lt-card-shadow: 0 10px 35px -10px rgba(0, 0, 0, 0.6);
+  --lt-card-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5);
 
-  --lt-stage-bg: var(--surface-2);
+  --lt-stage-bg: var(--surface);
   --lt-stage-border: var(--border);
-  --lt-stage-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  --lt-stage-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
 
   /* Mappings for legacy vars */
   --lt-bg: var(--bg);
   --lt-text: var(--text);
   --lt-text-muted: var(--text-muted);
   --lt-text-faint: var(--text-muted);
-  --lt-accent-pink: var(--accent);
+  --lt-accent-pink: #FF8FB8;
   --bg-color: var(--bg);
   --text-color: var(--text);
-  --glass-shadow: 0 10px 35px -10px rgba(0, 0, 0, 0.6);
+  --glass-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5);
 
   /* Pastel badges - forced dark text #1E1B2E in both modes */
   --badge-text: #1E1B2E;
-  --badge-pink-bg: #FFD0E0;
-  --badge-yellow-bg: #FFE29A;
-  --badge-blue-bg: #BFDDEA;
+  --badge-pink-bg: #FF8FB8;
+  --badge-yellow-bg: #FFE9B7;
+  --badge-blue-bg: #CAE1E9;
 
-  --lt-chip-pink-bg: #FFD0E0;
-  --lt-chip-pink-fg: #1E1B2E;
-  --lt-chip-yellow-bg: #FFE29A;
-  --lt-chip-yellow-fg: #1E1B2E;
-  --lt-chip-blue-bg: #BFDDEA;
-  --lt-chip-blue-fg: #1E1B2E;
+  --lt-chip-pink-bg: #FF8FB8;
+  --lt-chip-pink-fg: #14121C;
+  --lt-chip-yellow-bg: #FFE9B7;
+  --lt-chip-yellow-fg: #14121C;
+  --lt-chip-blue-bg: #CAE1E9;
+  --lt-chip-blue-fg: #14121C;
 
-  --marshmallow-pink: #FF8AB2;
-  --marshmallow-blue: #7CB9E8;
-  --marshmallow-yellow: #FFDF80;
+  --marshmallow-pink: #FF8FB8;
+  --marshmallow-blue: #CAE1E9;
+  --marshmallow-yellow: #FFE9B7;
 }
 
 * {
@@ -139,6 +140,8 @@ html {
   font-family: var(--font-body);
   background-color: var(--bg);
   color: var(--text);
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -147,6 +150,7 @@ body {
   font-family: var(--font-body);
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
+  max-width: 100vw;
   position: relative;
   min-height: 100vh;
 }
@@ -282,6 +286,14 @@ p {
 .animate-marquee-reverse { display: flex; width: max-content; animation: marquee-reverse 30s linear infinite; }
 .animate-marquee:hover,
 .animate-marquee-reverse:hover { animation-play-state: paused; }
+
+@media (max-width: 768px) {
+  .animate-blob-1,
+  .animate-blob-2,
+  .animate-blob-3 {
+    animation: none !important;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {

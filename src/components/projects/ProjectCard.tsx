@@ -30,7 +30,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <div
-      className="w-full max-w-[440px] rounded-[2rem] bg-[#FFFBF5] dark:bg-[#181622] border border-white/80 dark:border-white/10 p-5 sm:p-6 shadow-[0_20px_50px_rgba(42,39,51,0.08)] transition-all duration-300"
+      className="w-full max-w-[440px] rounded-[2rem] bg-[#FFFBF5] dark:bg-[#1E1B2A] border border-white/80 dark:border-white/10 p-5 sm:p-6 shadow-[0_20px_50px_rgba(42,39,51,0.08)] transition-all duration-300"
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? "scale(1)" : "scale(0.97)",
@@ -53,7 +53,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 <span className="w-2 h-2 rounded-full bg-[#FFE9B7]/70" />
                 <span className="w-2 h-2 rounded-full bg-[#CAE1E9]/80" />
               </div>
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-white/90 dark:bg-[#181622]/90 text-[#2A2733] dark:text-[#F5F3FB] shadow-xs">
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-white/90 dark:bg-[#1E1B2A]/90 text-[#2A2733] dark:text-[#F5F1FA] shadow-xs">
                 {project.category}
               </span>
             </div>

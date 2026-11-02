@@ -161,7 +161,7 @@ export default function AboutScene() {
         {/* RIGHT — Detail panel */}
         <div
           className="flex flex-col justify-center"
-          style={{ background: "#FFFBF5" }}
+          style={{ background: "var(--surface)" }}
         >
           <AboutPanel active={activeHotspot} isDefault={activeId === null} />
         </div>
@@ -176,7 +176,7 @@ export default function AboutScene() {
         <div
           ref={containerRef}
           className="relative overflow-hidden"
-          style={{ height: 420, background: "#1a1424" }}
+          style={{ height: 420, background: "var(--surface-2)" }}
         >
           {/* Edge glows */}
           <div className="pointer-events-none absolute inset-0" aria-hidden>
@@ -212,12 +212,12 @@ export default function AboutScene() {
         </div>
 
         {/* Panel */}
-        <div style={{ minHeight: 300, background: "#FFFBF5" }}>
+        <div style={{ minHeight: 300, background: "var(--surface)" }}>
           <AboutPanel active={activeHotspot} isDefault={activeId === null} />
         </div>
 
         {/* Dot row */}
-        <div className="flex justify-center gap-2 pb-5" style={{ background: "#FFFBF5" }}>
+        <div className="flex justify-center gap-2 pb-5" style={{ background: "var(--surface)" }}>
           {Array.from({ length: 6 }).map((_, i) => (
             <motion.button
               key={i}
@@ -226,8 +226,8 @@ export default function AboutScene() {
               onClick={() => handleActivate(aboutHotspots[i].id)}
               className="w-2.5 h-2.5 rounded-full focus:outline-none focus:ring-2 focus:ring-[#E85D88]"
               style={{
-                backgroundColor: activeId === i + 1 ? aboutHotspots[i].color : "#2A2733",
-                opacity: activeId === i + 1 ? 1 : 0.2,
+                backgroundColor: activeId === i + 1 ? aboutHotspots[i].color : "var(--text-muted)",
+                opacity: activeId === i + 1 ? 1 : 0.25,
               }}
               animate={{ scale: activeId === i + 1 ? 1.5 : 1 }}
             />

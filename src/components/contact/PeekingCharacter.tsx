@@ -18,7 +18,7 @@ export function PeekingCharacter({ isSuccess = false }: PeekingCharacterProps) {
      * overflow:visible so heart/sparkle can peek outside.
      * The form card sits with -mt-10 (overlaps bottom 40px) → chin effect.
      */
-    <div className="relative w-[320px] h-[300px] mx-auto select-none pointer-events-none overflow-visible">
+    <div className="relative w-full max-w-[320px] h-[300px] mx-auto select-none pointer-events-none overflow-visible">
 
       {/* ---------------------------------------------------------------- */}
       {/* HEART – top-right, outside the face                              */}
@@ -90,13 +90,13 @@ export function PeekingCharacter({ isSuccess = false }: PeekingCharacterProps) {
              * inner div is exactly 320×300 and clips the bottom bleed.
              * overflow-hidden here (not on outer) so decorations stay visible.
              */
-            <div className="relative w-[320px] h-[300px] overflow-hidden">
+            <div className="relative w-full max-w-[320px] h-[300px] overflow-hidden">
               <Image
                 src="/contact/sneha-doll.png"
                 alt="Sneha 3D Doll Avatar"
                 fill
                 priority
-                sizes="320px"
+                sizes="(max-width: 640px) 280px, 320px"
                 className="object-cover"
                 style={{
                   objectPosition: "50% 8%",
@@ -113,7 +113,7 @@ export function PeekingCharacter({ isSuccess = false }: PeekingCharacterProps) {
             </div>
           ) : (
             /* Fallback initials avatar */
-            <div className="w-[320px] h-[300px] flex items-center justify-center">
+            <div className="w-full max-w-[320px] h-[300px] flex items-center justify-center">
               <div className="w-36 h-36 rounded-full bg-gradient-to-tr from-[#FFE9B7] via-[#FFD8E5] to-[#CAE1E9] border-4 border-white shadow-lg flex items-center justify-center">
                 <span className="font-serif text-5xl font-bold text-[#2A2733]">
                   S

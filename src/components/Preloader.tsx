@@ -66,9 +66,9 @@ export function Preloader() {
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
           />
 
-          {/* Main White Canvas with Marshmallow Content */}
+          {/* Main Canvas with Marshmallow Content */}
           <motion.div
-            className="absolute inset-0 bg-[#FFFBF5] z-40 flex flex-col items-center justify-center px-6"
+            className="absolute inset-0 bg-[#FFFBF5] dark:bg-[#14121C] z-40 flex flex-col items-center justify-center px-6"
             initial={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
@@ -113,7 +113,7 @@ export function Preloader() {
                   }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 />
-                <div className="absolute z-20 text-3xl font-black text-[#2A2733] font-display">
+                <div className="absolute z-20 text-3xl font-black text-[#2A2733] dark:text-[#F5F1FA] font-display">
                   S
                 </div>
               </motion.div>
@@ -125,24 +125,24 @@ export function Preloader() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="space-y-2"
               >
-                <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2A2733] font-display">
-                  SNEHA <span className="text-[#E85D88]">AGRAWAL</span>
+                <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2A2733] dark:text-[#F5F1FA] font-display">
+                  SNEHA <span className="text-[#E85D88] dark:text-[#FF8FB8]">AGRAWAL</span>
                 </h1>
-                <p className="text-xs md:text-sm tracking-widest uppercase font-semibold text-[#5E5B6E]">
+                <p className="text-xs md:text-sm tracking-widest uppercase font-semibold text-[#5E5B6E] dark:text-[#A9A3B8]">
                   Full-Stack Developer • Creative Engineer
                 </p>
               </motion.div>
 
               {/* Progress Counter & Pill Bar */}
               <div className="mt-8 flex flex-col items-center gap-3">
-                <div className="w-48 h-2 bg-[#2A2733]/5 rounded-full overflow-hidden p-0.5 border border-[#2A2733]/10">
+                <div className="w-48 h-2 bg-[#2A2733]/5 dark:bg-white/10 rounded-full overflow-hidden p-0.5 border border-[#2A2733]/10 dark:border-white/15">
                   <motion.div
                     className="h-full rounded-full bg-gradient-to-r from-[#FFE9B7] via-[#FFD8E5] to-[#CAE1E9]"
                     style={{ width: `${count}%` }}
                     transition={{ ease: "easeOut" }}
                   />
                 </div>
-                <span className="text-xs font-mono font-medium text-[#2A2733]/70">
+                <span className="text-xs font-mono font-medium text-[#2A2733]/70 dark:text-[#F5F1FA]/70">
                   {count}%
                 </span>
               </div>

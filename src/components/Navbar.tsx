@@ -173,7 +173,7 @@ export function Navbar() {
             {/* Theme Toggle */}
             <motion.button
               onClick={toggleTheme}
-              className="w-9 h-9 rounded-full flex items-center justify-center transition-colors border"
+              className="w-11 h-11 rounded-full flex items-center justify-center transition-colors border"
               style={{
                 background: "var(--surface-2)",
                 borderColor: "var(--border)",
@@ -215,7 +215,7 @@ export function Navbar() {
             {/* Mobile Menu Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden w-10 h-10 rounded-full flex items-center justify-center border"
+              className="md:hidden w-11 h-11 rounded-full flex items-center justify-center border"
               style={{
                 background: "var(--surface-2)",
                 borderColor: "var(--border)",

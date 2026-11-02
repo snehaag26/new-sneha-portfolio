@@ -53,7 +53,7 @@ export const ProjectPopup: React.FC<ProjectPopupProps> = ({
 
       {/* Clay Project Card (210px desktop, 190px mobile) */}
       <div
-        className="w-[190px] sm:w-[210px] rounded-2xl p-2 space-y-1.5 bg-[#FFFBF5] dark:bg-[#1C1A24] border border-black/5 dark:border-white/10 shadow-[0_12px_28px_rgba(42,39,51,0.18)] dark:shadow-[0_12px_28px_rgba(0,0,0,0.55)] select-none text-left"
+        className="w-[190px] max-w-[200px] sm:w-[210px] sm:max-w-none rounded-2xl p-2 space-y-1.5 bg-[#FFFBF5] dark:bg-[#1E1B2A] border border-black/5 dark:border-white/10 shadow-[0_12px_28px_rgba(42,39,51,0.18)] dark:shadow-[0_12px_28px_rgba(0,0,0,0.55)] select-none text-left"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Project Thumbnail Screenshot */}

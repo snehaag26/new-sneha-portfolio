@@ -87,7 +87,7 @@ export function ContactScene() {
   };
 
   return (
-    <div className="relative w-full max-w-[560px] mx-auto select-none pt-4 pb-12">
+    <div className="relative w-full max-w-[560px] mx-auto select-none pt-4 pb-12 px-2 sm:px-0">
       {/* ============================================================ */}
       {/* 3D PUFFY CLOUDS (always cream/white, never dark blobs)       */}
       {/* ============================================================ */}
@@ -310,7 +310,7 @@ export function ContactScene() {
         {/* ------------------------------------------------------------ */}
         {/* 2. CHARACTER CONTAINER – reserves 300px for the doll          */}
         {/* ------------------------------------------------------------ */}
-        <div className="relative w-[320px] h-[300px] mx-auto overflow-visible z-10">
+        <div className="relative w-full max-w-[320px] h-[300px] mx-auto overflow-visible z-10">
           <PeekingCharacter isSuccess={submitted} />
         </div>
 
@@ -398,7 +398,7 @@ export function ContactScene() {
                   <div className="absolute inset-0 flex items-center">
                     <div className="w-full border-t border-black/06 dark:border-white/08" />
                   </div>
-                  <span className="relative px-3 text-[10px] font-mono uppercase tracking-wider text-[#8E8A9F] bg-[#FFFBF5] dark:bg-[#2E2A3A]">
+                  <span className="relative px-3 text-[10px] font-mono uppercase tracking-wider text-[var(--text-muted)] bg-[var(--surface)]">
                     or reach me directly
                   </span>
                 </div>

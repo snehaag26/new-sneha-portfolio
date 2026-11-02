@@ -28,7 +28,7 @@ export const ExperienceCard = forwardRef<HTMLElement, ExperienceCardProps>(
         ref={ref}
         tabIndex={0}
         aria-label={`${stop.role} at ${stop.organization}`}
-        className="w-full max-w-[560px] p-8 sm:p-10 relative transition-shadow duration-300 focus-visible:outline-none select-none rounded-2xl shadow-lg border"
+        className="w-full max-w-[560px] p-5 sm:p-8 lg:p-10 relative transition-shadow duration-300 focus-visible:outline-none select-none rounded-2xl shadow-lg border"
         style={{
           borderRadius: "16px",
           transformOrigin: align === "left" ? "right center" : "left center",

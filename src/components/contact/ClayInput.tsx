@@ -61,7 +61,7 @@ export function ClayInput({
 
       {/* Puffy Inset Clay Container */}
       <div
-        className={`relative flex items-center transition-all duration-200 bg-[#FBF8F2] dark:bg-[#252130] ${
+        className={`relative flex items-center transition-all duration-200 bg-[#FBF8F2] dark:bg-[#272336] ${
           isTextArea ? "rounded-3xl items-start p-2" : "rounded-full px-2 py-1.5"
         } ${
           isFocused
@@ -96,7 +96,7 @@ export function ClayInput({
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             rows={rows}
-            className="w-full bg-transparent px-3.5 py-2 text-sm text-[#2A2733] dark:text-[#F5F3FB] placeholder-[#8E8A9F] dark:placeholder-[#7D798E] focus:outline-none resize-none leading-relaxed"
+            className="w-full bg-transparent px-3.5 py-2 text-sm text-[#2A2733] dark:text-[#F5F1FA] placeholder-[#8E8A9F] dark:placeholder-[#A9A3B8] focus:outline-none resize-none leading-relaxed"
           />
         ) : (
           <input
@@ -108,7 +108,7 @@ export function ClayInput({
             onChange={onChange}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
-            className="w-full bg-transparent px-3.5 py-2 text-sm text-[#2A2733] dark:text-[#F5F3FB] placeholder-[#8E8A9F] dark:placeholder-[#7D798E] focus:outline-none"
+            className="w-full bg-transparent px-3.5 py-2 text-sm text-[#2A2733] dark:text-[#F5F1FA] placeholder-[#8E8A9F] dark:placeholder-[#A9A3B8] focus:outline-none"
           />
         )}
       </div>
