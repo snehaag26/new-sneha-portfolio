@@ -1,0 +1,293 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-pill-active-bg: var(--pill-active-bg);
+  --color-pill-active-text: var(--pill-active-text);
+
+  --color-butter: #FFE9B7;
+  --color-powder: #CAE1E9;
+  --color-blush: #FFD8E5;
+
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* ================================================================
+   SEMANTIC THEME TOKENS
+================================================================ */
+:root {
+  --bg: #FFF8F0;
+  --surface: #FFFFFF;
+  --surface-2: #FDF1F4;
+  --text: #1E1B2E;
+  --text-muted: #5E5A72;
+  --border: rgba(30, 27, 46, 0.10);
+  --accent: #E8557F;
+  --accent-contrast: #FFFFFF;
+  --pill-active-bg: #1E1B2E;
+  --pill-active-text: #FFFFFF;
+
+  /* Card and UI tokens */
+  --card-bg: var(--surface);
+  --card-border: var(--border);
+  --lt-card-bg: var(--surface);
+  --lt-card-border: var(--border);
+  --lt-card-shadow: 0 10px 30px rgba(30, 27, 46, 0.06);
+
+  --lt-stage-bg: var(--surface);
+  --lt-stage-border: var(--border);
+  --lt-stage-shadow: 0 20px 50px rgba(30, 27, 46, 0.08);
+
+  /* Mappings for legacy vars */
+  --lt-bg: var(--bg);
+  --lt-text: var(--text);
+  --lt-text-muted: var(--text-muted);
+  --lt-text-faint: var(--text-muted);
+  --lt-accent-pink: var(--accent);
+  --lt-accent-yellow: #8A5A00;
+  --lt-accent-blue: #1F5A78;
+  --bg-color: var(--bg);
+  --text-color: var(--text);
+  --glass-shadow: 0 10px 30px rgba(30, 27, 46, 0.06);
+
+  /* Pastel badges - forced dark text #1E1B2E in both modes */
+  --badge-text: #1E1B2E;
+  --badge-pink-bg: #FFD0E0;
+  --badge-yellow-bg: #FFE29A;
+  --badge-blue-bg: #BFDDEA;
+
+  --lt-chip-pink-bg: #FFD0E0;
+  --lt-chip-pink-fg: #1E1B2E;
+  --lt-chip-yellow-bg: #FFE29A;
+  --lt-chip-yellow-fg: #1E1B2E;
+  --lt-chip-blue-bg: #BFDDEA;
+  --lt-chip-blue-fg: #1E1B2E;
+
+  --marshmallow-pink: #FFD8E5;
+  --marshmallow-blue: #CAE1E9;
+  --marshmallow-yellow: #FFE9B7;
+}
+
+[data-theme="dark"],
+.dark {
+  --bg: #0F0D1A;
+  --surface: #1A1730;
+  --surface-2: #231F3D;
+  --text: #F5F1FA;
+  --text-muted: #B3AECB;
+  --border: rgba(255, 255, 255, 0.12);
+  --accent: #FF8FB1;
+  --accent-contrast: #1E1B2E;
+  --pill-active-bg: #FFE9A8;
+  --pill-active-text: #1E1B2E;
+
+  /* Card and UI tokens */
+  --card-bg: var(--surface);
+  --card-border: var(--border);
+  --lt-card-bg: var(--surface);
+  --lt-card-border: var(--border);
+  --lt-card-shadow: 0 10px 35px -10px rgba(0, 0, 0, 0.6);
+
+  --lt-stage-bg: var(--surface-2);
+  --lt-stage-border: var(--border);
+  --lt-stage-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+
+  /* Mappings for legacy vars */
+  --lt-bg: var(--bg);
+  --lt-text: var(--text);
+  --lt-text-muted: var(--text-muted);
+  --lt-text-faint: var(--text-muted);
+  --lt-accent-pink: var(--accent);
+  --bg-color: var(--bg);
+  --text-color: var(--text);
+  --glass-shadow: 0 10px 35px -10px rgba(0, 0, 0, 0.6);
+
+  /* Pastel badges - forced dark text #1E1B2E in both modes */
+  --badge-text: #1E1B2E;
+  --badge-pink-bg: #FFD0E0;
+  --badge-yellow-bg: #FFE29A;
+  --badge-blue-bg: #BFDDEA;
+
+  --lt-chip-pink-bg: #FFD0E0;
+  --lt-chip-pink-fg: #1E1B2E;
+  --lt-chip-yellow-bg: #FFE29A;
+  --lt-chip-yellow-fg: #1E1B2E;
+  --lt-chip-blue-bg: #BFDDEA;
+  --lt-chip-blue-fg: #1E1B2E;
+
+  --marshmallow-pink: #FF8AB2;
+  --marshmallow-blue: #7CB9E8;
+  --marshmallow-yellow: #FFDF80;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Headings font */
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0;
+  color: var(--text);
+}
+
+p {
+  color: var(--text);
+}
+
+/* Force dark text inside any pastel badge in both light and dark mode */
+.pastel-badge {
+  color: #1E1B2E !important;
+}
+
+/* Resume button forced dark text on yellow bg in both modes */
+.btn-resume {
+  background-color: #FFE9B7 !important;
+  color: #1E1B2E !important;
+}
+.btn-resume * {
+  color: #1E1B2E !important;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ================================================================
+   GLASS UTILITIES
+================================================================ */
+.glass-pill {
+  background: var(--surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  color: var(--text);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.04);
+}
+
+.glass-card {
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  color: var(--text);
+  box-shadow: var(--lt-card-shadow);
+}
+
+[data-theme="dark"] .glass-card,
+.dark .glass-card {
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5),
+              0 0 1px 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+/* Subtle background noise texture — visible only in dark mode */
+.bg-grain {
+  background-image: none;
+}
+[data-theme="dark"] .bg-grain,
+.dark .bg-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Marshmallow shadows */
+.shadow-marshmallow {
+  box-shadow: 0 14px 34px -10px rgba(232, 93, 136, 0.10),
+              0 4px 12px -2px rgba(74, 143, 231, 0.06);
+}
+
+.shadow-marshmallow-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.shadow-marshmallow-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 42px -12px rgba(232, 93, 136, 0.15),
+              0 8px 18px -4px rgba(74, 143, 231, 0.10);
+}
+
+/* Keyframes */
+@keyframes blob-float-1 {
+  0%, 100% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+  33%       { transform: translate(30px, -40px) scale(1.1) rotate(20deg); }
+  66%       { transform: translate(-20px, 30px) scale(0.95) rotate(-15deg); }
+}
+@keyframes blob-float-2 {
+  0%, 100% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+  33%       { transform: translate(-35px, 25px) scale(1.08) rotate(-10deg); }
+  66%       { transform: translate(40px, -30px) scale(0.92) rotate(25deg); }
+}
+@keyframes blob-float-3 {
+  0%, 100% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+  50%       { transform: translate(25px, 35px) scale(1.15) rotate(15deg); }
+}
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-reverse {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-blob-1          { animation: blob-float-1 18s ease-in-out infinite; }
+.animate-blob-2          { animation: blob-float-2 22s ease-in-out infinite; }
+.animate-blob-3          { animation: blob-float-3 16s ease-in-out infinite; }
+.animate-shimmer         { animation: shimmer 2.5s infinite; }
+.animate-marquee         { display: flex; width: max-content; animation: marquee 30s linear infinite; }
+.animate-marquee-reverse { display: flex; width: max-content; animation: marquee-reverse 30s linear infinite; }
+.animate-marquee:hover,
+.animate-marquee-reverse:hover { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
